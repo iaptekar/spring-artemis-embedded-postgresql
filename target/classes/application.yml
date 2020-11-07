@@ -1,0 +1,31 @@
+spring:
+  main:
+    banner-mode: OFF
+  flyway:
+    enabled: true
+    schemas: test
+    placeholders:
+      schema: test
+  artemis:
+    mode: embedded
+    host: localhost
+    port: 61616
+    user: developer
+    password: developer
+
+zonky:
+  test:
+    database:
+      postgres:
+        client:
+          properties:
+            stringtype: unspecified
+            currentSchema: test
+        server:
+          properties:
+            shared_buffers: 16MB
+            max_connections: 20
+
+jms:
+  queue:
+    destination: test
