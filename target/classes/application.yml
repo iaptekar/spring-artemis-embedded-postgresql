@@ -29,3 +29,7 @@ zonky:
 jms:
   queue:
     destination: test
+
+route:
+  start: direct:start
+  end: direct:end
