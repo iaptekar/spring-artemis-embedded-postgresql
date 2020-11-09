@@ -33,3 +33,9 @@ jms:
 route:
   start: direct:start
   end: direct:end
+
+camel:
+  component:
+    direct:
+      timeout: 1000
+      block: true
