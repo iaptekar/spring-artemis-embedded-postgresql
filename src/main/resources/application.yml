@@ -1,17 +1,26 @@
 spring:
-  main:
-    banner-mode: OFF
+  application:
+    name: artemis-test
   flyway:
-    enabled: true
-    schemas: test
-    placeholders:
-      schema: test
+    enabled: false
+    default-schema: test
+    schemas: ${spring.flyway.default-schema}
   artemis:
-    mode: embedded
-    host: localhost
-    port: 61616
-    user: developer
-    password: developer
+    #  mode: embedded
+    #  host: localhost
+    #  port: 61616
+    #  user: developer
+    #  password: developer
+    embedded:
+      enabled: true
+
+java:
+  util:
+    logging:
+      manager: none
+
+my:
+  schema: test
 
 zonky:
   test:

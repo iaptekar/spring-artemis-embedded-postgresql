@@ -114,7 +114,11 @@
                     <artifactId>artemis-jms-server</artifactId>
                 </dependency>
                 -->
-
+        <dependency>
+            <groupId>com.solace.spring.boot</groupId>
+            <artifactId>solace-jms-spring-boot-starter</artifactId>
+            <version>3.2.1</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-jms-starter</artifactId>
@@ -160,6 +164,12 @@
             <artifactId>artemis-junit</artifactId>
             <version>${artemis.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.logmanager</groupId>
+                    <artifactId>jboss-logmanager</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!---->
         <dependency>

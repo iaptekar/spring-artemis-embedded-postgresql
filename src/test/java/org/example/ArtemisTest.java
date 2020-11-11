@@ -1,7 +1,5 @@
 package org.example;
 
-import org.apache.activemq.artemis.junit.EmbeddedActiveMQResource;
-import org.junit.Rule;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -17,9 +15,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @TestPropertySource(properties = "spring.flyway.enabled=false")
 @ActiveProfiles("test")
 public class ArtemisTest {
-
-    @Rule
-    public EmbeddedActiveMQResource resource = new EmbeddedActiveMQResource();
 
     @Autowired
     ArtemisProducer producer;

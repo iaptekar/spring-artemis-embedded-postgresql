@@ -1,0 +1,4 @@
+java:
+  util:
+    logging:
+      manager: none

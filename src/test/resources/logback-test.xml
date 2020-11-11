@@ -1,0 +1,19 @@
+<configuration>
+    <logger name="org.springframework" level="warn"/>
+    <logger name="org.hibernate" level="warn"/>
+    <logger name="org.flywaydb" level="warn"/>
+    <logger name="io.zonky" level="warn"/>
+    <logger name="org.apache" level="warn"/>
+    <logger name="org.apache.activemq" level="info"/>
+    <logger name="org.apache.activemq.audit" level="error"/>
+    <logger name="io.netty" level="warn"/>
+    <logger name="org.jboss" level="warn"/>
+    <appender name="con" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="debug">
+        <appender-ref ref="con"/>
+    </root>
+</configuration>
