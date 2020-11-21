@@ -22,7 +22,7 @@ public class ArtemisConsumer {
     String getMessage() throws InterruptedException {
         synchronized (lock) {
             if (message == null) {
-                lock.wait();
+                lock.wait(10_000);
             }
             return message;
         }

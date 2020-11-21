@@ -6,8 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.5.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.3.6.RELEASE</version>
     </parent>
     <groupId>org.example</groupId>
     <artifactId>embedded-postgress</artifactId>
@@ -17,12 +16,13 @@
     <name>A Camel Spring Route</name>
 
     <properties>
+        <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <log4j2-version>2.13.3</log4j2-version>
         <camel.version>3.6.0</camel.version>
         <embedded-postgresql.version>11.6.0</embedded-postgresql.version>
-        <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
+        <!--        <spring-boot.version>2.3.5.RELEASE</spring-boot.version>-->
+        <testcontainers.version>1.15.0</testcontainers.version>
     </properties>
 
     <dependencyManagement>
@@ -113,17 +113,22 @@
                     <groupId>org.apache.activemq</groupId>
                     <artifactId>artemis-jms-server</artifactId>
                 </dependency>
-                -->
+-->
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <version>${testcontainers.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.solace.spring.boot</groupId>
             <artifactId>solace-jms-spring-boot-starter</artifactId>
-            <version>3.2.1</version>
+            <version>4.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-jms-starter</artifactId>
         </dependency>
-        <!--
+        <!---->
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-mock-starter</artifactId>
@@ -144,7 +149,7 @@
             <artifactId>camel-test-spring</artifactId>
             <scope>test</scope>
         </dependency>
--->
+
         <!-- testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -175,6 +180,18 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-test-spring-junit5</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
 

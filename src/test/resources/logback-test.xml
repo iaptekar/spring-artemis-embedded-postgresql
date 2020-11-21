@@ -8,6 +8,8 @@
     <logger name="org.apache.activemq.audit" level="error"/>
     <logger name="io.netty" level="warn"/>
     <logger name="org.jboss" level="warn"/>
+    <logger name="com.solacesystems" level="info"/>
+    <logger name="org.testcontainers" level="debug"/>
     <appender name="con" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%-5level %logger{50} - %msg%n</pattern>
